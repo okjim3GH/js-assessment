@@ -128,6 +128,7 @@ describe('functions', function() {
 
     result = functionsAnswers.curryIt(curryMe);
     expect(typeof result).to.eql('function');
+    console.log(result);
     expect(result.length).to.eql(1);
 
     result = functionsAnswers.curryIt(curryMe)(a);

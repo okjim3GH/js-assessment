@@ -46,14 +46,22 @@ exports.functionsAnswers = {
     var args = Array.from(arguments);
     args.shift();
       return fn(...args);
-
   },
 
   partialUsingArguments: function(fn) {
-
+    var args = Array.from(arguments);
+    args.shift();
+    return function(...newArgs){
+      return fn(...args,...newArgs);
+    };
   },
 
   curryIt: function(fn) {
-
+    var args = Array.from(arguments);
+    args.shift();
+    return function( ...newArgs){
+      return fn(...args,...newArgs);
+    };
   }
 };
+// https://blog.carbonfive.com/2015/01/14/gettin-freaky-functional-wcurried-javascript/
